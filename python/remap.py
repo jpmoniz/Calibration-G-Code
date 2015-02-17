@@ -73,17 +73,17 @@ def M207(self,**words):
        print "T1 in Range"
     else:
          T1Adj = T1 - T0
-         MESSAGE ('T1 Adjustment = {0:+.2f} ISSUE M17 TO ADJUST'.format(T1Adj))
+         MESSAGE ('T1 Adjustment = {0:+.2f} ISSUE M252 TO ADJUST'.format(T1Adj))
          self.params[4003] = T1Adj
-         #self.execute("M17") 
+         
     
     if T2 >= BotLim and T2 <= TopLim:
        print "T2 in Range"
     else:
          T2Adj = T2 - T0
-         MESSAGE ('T2 Adjustment = {0:+.2f} ISSUE M18 TO ADJUST'.format(T2Adj))    
+         MESSAGE ('T2 Adjustment = {0:+.2f} ISSUE M253 TO ADJUST'.format(T2Adj))    
          self.params[4004] = T2Adj
-         #self.execute("M18") 
+         
 
     if TC >= BotLim and TC <= TopLim:
        print "TC in Range"
@@ -91,6 +91,6 @@ def M207(self,**words):
          TCAdj = TC - T0
          MESSAGE ('TC Adjustment = {0:+.2f}'.format(TCAdj))    
          self.params[4005] = TCAdj
-         #self.execute("M18") 
+         
   
     return INTERP_OK
